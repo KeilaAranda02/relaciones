@@ -50,13 +50,12 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
-    /**
-     * Ver el nivel al que pertecenec un usario
-     *  public function level()
-    *{
-    *    return $this->belongsTo(Level::class);
-    *}
-     */
+
+     //Ver el nivel al que pertecenec un usario
+    public function level()
+    {
+       return $this->belongsTo(Level::class);
+    }
 
     
     public function groups()
