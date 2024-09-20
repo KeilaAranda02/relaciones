@@ -60,13 +60,18 @@ class User extends Authenticatable
 
     
     public function groups()
-    { //Un usuario puede y pertenece a  muchos grupos.
+    { //Un usuario tiene y pertenece a  muchos grupos.
         return $this->belongsToMany(Group::class)->withTimestamps();
     }
+
+
     public function location()
     {
+        //tengo uno a traves de perfil. Tengo una localizacion a traves de perfil
         return $this->hasOneThrough(Location::class, Profile::class);
     }
+
+
     public function posts()
     {
         return $this->hasMany(Post::class);
