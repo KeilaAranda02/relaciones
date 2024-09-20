@@ -8,6 +8,8 @@ class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
+     * Este método registra un alias en tu aplicación para que puedas usar el nombre corto
+     *  Debugbar en lugar del namespace completo de la clase \Barryvdh\Debugbar\Facades\Debugbar
      */
     public function register(): void
     {
