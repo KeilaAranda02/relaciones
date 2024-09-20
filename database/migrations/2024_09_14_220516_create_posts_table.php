@@ -13,14 +13,20 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            //un post pertenece a una categoria y fue creado por un usuario
             $table->bigInteger('category_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
-            $table->string('name');
-            $table->timestamps();
 
+            $table->string('name');
+
+            $table->timestamps();
+            
+            //si elimino la categoria se elimina el post
             $table->foreign('category_id')->references('id')->on('categories')
             ->onDelete('cascade')
             ->onUpdate('cascade');
+
+
             $table->foreign('user_id')->references('id')->on('users')
             ->onDelete('cascade')
             ->onUpdate('cascade');
