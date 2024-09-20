@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-
+            //url de la imagen
             $table->string('url');
-
+            //salvar la imagen de un post, video y perfil de un usuario
             $table->morphs('imageable');
 
             $table->timestamps();
