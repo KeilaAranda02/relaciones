@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //entidad en singular, la tabla se coloca en plural.
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
@@ -20,7 +21,8 @@ return new class extends Migration
             $table->string('web')->nullable();
 
             $table->timestamps();
-
+            
+            //si se elimina un usrio se elimina el perfil
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
