@@ -13,15 +13,18 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            //un comentario pertenece a un usuario. fue creado por un usuario
             $table->bigInteger('user_id')->unsigned();
+
+            //aqui se redacta el comentario
+            //un comentario puede escribirse en un video o en un post
             $table->text('body');
 
-             
-            
+            //polimorfismo
+            $table->morphs('commeentable');
+    
             $table->timestamps();
             
-
-
             $table->foreign('user_id')->references('id')->on('users')
             ->onDelete('cascade')
             ->onUpdate('cascade');
