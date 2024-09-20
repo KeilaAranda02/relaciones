@@ -10,6 +10,7 @@ class Image extends Model
     use HasFactory;
     public function imageable ()
     {
+        //transformar a
         return $this->morphTo();
     }
 }
