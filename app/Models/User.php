@@ -46,6 +46,7 @@ class User extends Authenticatable
     }
     public function profile()
     {
+        //un usuario tiene un solo perfil
         return $this->hasOne(Profile::class);
     }
 
