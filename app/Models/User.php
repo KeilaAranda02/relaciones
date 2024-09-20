@@ -72,14 +72,24 @@ class User extends Authenticatable
 
     public function posts()
     {
+        //un usuario tiene muchos posts
         return $this->hasMany(Post::class);
     }
+
     public function videos()
     {
         return $this->hasMany(Video::class);
     }
+
     public function comments()
     {
+        //un usuario tiene muchos comentarios
         return $this->hasMany(Comment::class);
+    }
+
+    public function image()
+    {
+        
+        return $this->morphOne(Image::class, 'imageable');
     }
 }
