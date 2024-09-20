@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //una localizacion pertenece a un perfil
+        //un usario tiene a tarves de un perfil  una localizacion
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('profile_id')->unsigned();
-            $table-> string('country');
+            $table-> string('country');//pais,ciudad
             $table->timestamps();
 
             $table->foreign('profile_id')->references('id')->on('users')
