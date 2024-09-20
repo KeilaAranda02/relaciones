@@ -10,6 +10,7 @@ class Level extends Model
     use HasFactory;
     public function users()
     {
+        //un nivel tiene muchos usuarios
         return $this->hasMany(User::class);
     }
     public function posts()
