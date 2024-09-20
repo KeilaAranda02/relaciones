@@ -10,6 +10,7 @@ class Profile extends Model
     use HasFactory;
     public function location()
     {
+        //un perfil tiene una localizacion
         return $this->hasOne(Location::class);
     }
 }
