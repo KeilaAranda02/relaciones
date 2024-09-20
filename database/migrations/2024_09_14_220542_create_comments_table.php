@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('body');
 
             //polimorfismo
-            $table->morphs('commeentable');
+            $table->morphs('commentable');
     
             $table->timestamps();
             
