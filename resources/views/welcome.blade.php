@@ -69,6 +69,8 @@
                                         </div>
 
                                         <div class="pt-3 sm:pt-5 lg:pt-0">
+                                        <!--Obtiene todos los usuarios de la base de datos mediante el modelo User. 
+                                            Deveria ser <a></a> -->
                                             <h2 class="text-xl font-semibold text-black dark:text-white">{{$user->name}}</h2>
                                         </div>
                                     </div>
