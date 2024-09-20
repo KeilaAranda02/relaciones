@@ -10,10 +10,12 @@ class Tag extends Model
     use HasFactory;
     public function posts()
     {
+        //una etiqueta tiene muchos posts
+        //transformado para muchos
         return $this->morphedByMany(Post::class, 'taggable');
     }
 
-    public function tags()
+    public function videos()
     {
         return $this->morphedByMany(Video::class, 'taggable');
     }
